@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/dp_10"
+    android:paddingTop="@dimen/dp_5"
+    android:paddingRight="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/tv_dian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="●"
+        android:textColor="@color/colorRed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_issue_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_8"
+        android:text="购物购物购物购物购物?"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintLeft_toRightOf="@id/tv_dian"
+        app:layout_constraintTop_toTopOf="@+id/tv_dian" />
+
+    <TextView
+        android:id="@+id/tv_issue_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="单笔订单金额（不含运费）满88元免邮费；不满88元，每单收取10元运费。"
+        app:layout_constraintLeft_toLeftOf="@id/tv_issue_question"
+        app:layout_constraintTop_toBottomOf="@id/tv_issue_question" />
+</androidx.constraintlayout.widget.ConstraintLayout>

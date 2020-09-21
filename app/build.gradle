@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.example.mallshop"
+        minSdkVersion 25
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    viewBinding.enabled = true
+    dataBinding.enabled = true
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation deps.androidX.appcompat
+    implementation deps.androidX.constraintlayout
+    //okhttp
+    implementation deps.okhttp3X.okhttp3
+    implementation deps.okhttp3X.logging_interceptor
+    //retrofit2
+    implementation deps.retrofitX.retrofit2
+    implementation deps.retrofitX.retrofit_converter_gson
+    implementation deps.retrofitX.retrofit2_adapter_rxjava
+    implementation deps.retrofitX.retrofit2_rxjava_components4
+    //rxjava
+    implementation deps.rxJavaX.rxjava3
+    implementation deps.rxJavaX.rxAndroid3
+    implementation deps.rxJavaX.rxPermissions
+    implementation deps.other.gifView
+    implementation deps.googleX.material
+    //上拉刷新下拉加载
+    implementation deps.other.smartRefreshLayout
+    implementation deps.other.smartRefreshHeader
+    implementation deps.other.tagFlowLayout
+    //banner
+    implementation deps.other.banner
+    //Glide
+    implementation deps.glideX.glide
+
+    implementation deps.other.rlvHelper
+
+
+    compile('com.alibaba.android:vlayout:1.2.8@aar') {
+        transitive = true
+    }
+
+    implementation deps.lombok.lombok
+    implementation project(path: ':mvplib')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+
+}
